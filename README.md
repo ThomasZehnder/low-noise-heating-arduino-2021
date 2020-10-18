@@ -1,7 +1,7 @@
 # low-noise-heating-arduino-2021
 Arduino based low noise heating sketch. 
 
-#Features
+# Features
 * optimize fan speed to reduce noise
 * temperature controller
 * small OLED display (set temp, act in and out temp, fan speed)
@@ -10,7 +10,7 @@ Arduino based low noise heating sketch.
 
 
 
-## work with GITHUB
+# work with GITHUB
 Un: ThomasZehnder
 Pw: @z..
 start first time with 
