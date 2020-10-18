@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "push_to_GITHUB": "node git_batch/git_push",
-    "pull_from_GITHUB": "node git_batch/git_pull",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pull_from_GITHUB": "node git_batch/git_pull"
   },
   "repository": {
     "type": "git",
