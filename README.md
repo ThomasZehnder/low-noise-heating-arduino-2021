@@ -1,12 +1,12 @@
 # low-noise-heating-arduino-2021
 Arduino based low noise heating sketch. 
 
-# Features
+# features
 * optimize fan speed to reduce noise
 * temperature controller
 * small OLED display (set temp, act in and out temp, fan speed)
 * two keys to set temperarture
-* IRD function (ON/OFF, change temperature
+* IRD function (ON/OFF, change temperature)
 
 
 
