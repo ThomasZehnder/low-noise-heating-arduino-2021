@@ -14,8 +14,7 @@ Arduino based low noise heating sketch.
 Un: ThomasZehnder
 Pw: @z..
 
-push --> commit to GIT, 
-pull --> get from GIT
+push --> commit to GIT, pull --> get from GIT
 
     git push --set-upstream https://github.com/ThomasZehnder/low-noise-heating-arduino-2021.git master
     git pull https://github.com/ThomasZehnder/low-noise-heating-arduino-2021.git master
