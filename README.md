@@ -15,7 +15,7 @@ Un: ThomasZehnder
 Pw: @z..
 start first time with 
 
-    git clone https://github.com/ThomasZehnder/low-noise-heating-arduino-2021.git master
+    git clone https://github.com/ThomasZehnder/low-noise-heating-arduino-2021.git
 
 push --> commit to GIT, pull --> get from GIT
 
