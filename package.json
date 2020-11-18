@@ -4,8 +4,8 @@
   "description": "Arduino based low noise heating sketch.",
   "main": "index.js",
   "scripts": {
-    "push_to_GITHUB": "node git_batch/git_push",
-    "pull_from_GITHUB": "node git_batch/git_pull"
+    "push_to_GITHUB": "echo use VScode UI Interface :-) send to GIT",
+    "pull_from_GITHUB": "echo use VScode UI Interface :-)"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,5 @@
     "url": "https://github.com/ThomasZehnder/low-noise-heating-arduino-2021/issues"
   },
   "homepage": "https://github.com/ThomasZehnder/low-noise-heating-arduino-2021#readme",
-  "dependencies": {
-    "shelljs": "^0.8.4"
-  }
+
 }
