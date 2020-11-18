@@ -12,7 +12,7 @@ Control fan speed and heating power on minimum needed to hold desired temperatur
 * IRD function (ON/OFF, change temperature)
 
 # Arduino board Pro mini
-<img src="images/arduino-pro-mini-2.png" width="400px" />  
+<img src="images/arduino-pro-mini-2.png" width="400px" />   
 
 Note: GND Pin is not wired proper, check before using an clone, perhaps bridge with wire.
 
