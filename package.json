@@ -2,7 +2,6 @@
   "name": "low-noise-heating-arduino-2021",
   "version": "1.0.0",
   "description": "Arduino based low noise heating sketch.",
-  "main": "index.js",
   "scripts": {
     "push_to_GITHUB": "echo use VScode UI Interface :-) send to GIT",
     "pull_from_GITHUB": "echo use VScode UI Interface :-)"
@@ -16,6 +15,5 @@
   "bugs": {
     "url": "https://github.com/ThomasZehnder/low-noise-heating-arduino-2021/issues"
   },
-  "homepage": "https://github.com/ThomasZehnder/low-noise-heating-arduino-2021#readme",
-
+  "homepage": "https://github.com/ThomasZehnder/low-noise-heating-arduino-2021#readme"
 }
