@@ -120,6 +120,9 @@ void loop()
   //true if new conversion was started
   if (tempSensorLoop())
   {
+
+    serialOutTemperatureCsv();
+
     x++;
      // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
     display.setCursor(64, 0);
