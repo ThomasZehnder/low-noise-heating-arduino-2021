@@ -16,7 +16,7 @@
 #define PIN_KEY_0 8
 #define PIN_KEY_1 9 
 
-//Board Type
+//Board Type, only support Arduino Pro Mini
 #define MY_BOARD_TYPE "ARDUINO_AVR_PRO"
 
 //PINS
