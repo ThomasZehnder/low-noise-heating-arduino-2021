@@ -33,23 +33,11 @@ void ledPulse(void)
   digitalWrite(pinOutputs[selectedPinOutput], LOW);  // turn the LED on (HIGH is the voltage level)
   delay(100);
 }
-void ledFlash(void)
-{
-  int i;
-  for (i = 1; i < 10; i++)
-  {
-    ledPulse();
-  }
-}
+
 
 void ledCommand(char c)
 {
-  if (c == 'f')
-  {
-    ledFlash();
-    serialPlusOled("f = flash sequence 10 times fast");
-  }
-  else if (c == 'o')
+if (c == 'o')
   {
     digitalWrite(pinOutputs[selectedPinOutput], HIGH); // turn the LED on (HIGH is the voltage level)
     serialPlusOled("o = off");
@@ -58,6 +46,21 @@ void ledCommand(char c)
   {
     digitalWrite(pinOutputs[selectedPinOutput], LOW); // turn the LED on (HIGH is the voltage level)
     serialPlusOled("x = on");
+  }
+  else if (c == 'a')
+  {
+    analogWrite(pinOutputs[selectedPinOutput], 256/4); // 25%
+    serialPlusOled("a = 25%");
+  }  
+  else if (c == 'b')
+  {
+    analogWrite(pinOutputs[selectedPinOutput], 256/2); // 50%
+    serialPlusOled("b = 50%");
+  }
+    else if (c == 'c')
+  {
+    analogWrite(pinOutputs[selectedPinOutput], 256/4*3); // 75%
+    serialPlusOled("c = 75%");
   }
   else if (c == 'p')
   {

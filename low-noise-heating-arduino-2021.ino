@@ -29,13 +29,13 @@ char operationMode = 'A';
 void setup()
 {
   // setup OLED display 
+  // SCL to arduino pin A5
+  // SDA to arduino pin A4
   displayInit();
 
   // initialize serial: baud rate fix to 115200
   serialInit(115200);
 
-  // SCL to arduino pin A5
-  // SDA to arduino pin A4
 
   // initialize led's
   ledInit();

@@ -4,18 +4,18 @@
 
 void help()
 {
-  int aditionalDelay = 0;
-  while (keyPressed(0)) {aditionalDelay=2000;}; // wait on key0
-  while (keyPressed(1)) {aditionalDelay=2000;}; // wait on key1
-  serialPlusOledDelayed("Led Commands");
+  int additionalDelay = 0;
+  while (keyPressed(0)) {additionalDelay=2000;}; // wait on key0
+  while (keyPressed(1)) {additionalDelay=2000;}; // wait on key1
+  serialPlusOledDelayed("Out Commands");
   serialPlusOledDelayed("x,o = off/on");
   serialPlusOledDelayed("d = 100ms delay");
   serialPlusOledDelayed("p = 100ms puls");
-  serialPlusOledDelayed("f = flash sequence 10 times fast");
-  serialPlusOledDelayed("0..3 = select led (modal)");
+  serialPlusOledDelayed("a,b,c = 25%,50%,75% on");
+  serialPlusOledDelayed("0..3 = select output (modal)");
   serialPlusOledDelayed("h = this help");
   
-  delay(200+aditionalDelay);
+  delay(1000+additionalDelay);
   
   while (keyPressed(0)) {}; // wait on key0
   while (keyPressed(1)) {}; // wait on key1
@@ -27,6 +27,6 @@ void help()
   serialPlusOledDelayed("& = clear display");
   serialPlusOledDelayed("\\ = new line");
   
-  delay(200+aditionalDelay);
+  delay(1000+additionalDelay);
 
 }
