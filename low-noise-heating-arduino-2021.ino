@@ -13,6 +13,7 @@
 
 */
 
+#include "low-noise-heater-defines.hpp"
 #include "serial-help.hpp"
 #include "serial-key.hpp"
 #include "serial-display.hpp"
@@ -36,10 +37,10 @@ void setup()
 
   Serial.begin(115200);
   Serial.println("################################################################");
-  Serial.println(" Serial Interface to Led's, OLED Display and Keys (115200 Baud )");
+  Serial.println(" LOW NOISE HEATER (115200 Baud )");
   Serial.println("################################################################");
-  Serial.print(__DATE__);
-  Serial.print(" / ");
+  Serial.print(BUILD_DATE_TIME);
+  Serial.print(" ../ ");
   Serial.println(__TIME__);
 
   //Default settings IO mapping
@@ -92,7 +93,7 @@ void setup()
 #error Unsupported board selection. Stop compilation.
 #endif
 
-  // initialize leds
+  // initialize led's
   ledInit();
 
   // initialize keys

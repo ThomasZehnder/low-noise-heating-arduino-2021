@@ -17,7 +17,7 @@ byte m = 0;
 // addresses
 byte addr[M][8];
 
-//temp for asynch reading
+//temp for asynchronous reading
 float temp[M];
 
 //local prototypes
