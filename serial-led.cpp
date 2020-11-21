@@ -2,6 +2,9 @@
 #include "serial-led.hpp"
 #include "serial-display.hpp"
 
+char pinOutputs[4];
+char selectedPinOutput = 0;
+
 void ledInit(void)
 {
   int i;

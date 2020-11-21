@@ -21,14 +21,11 @@
 
 char c = 0;
 
-char pinOutputs[4];
-char selectedPinOutput = 0;
+
 
 bool serialToOledOn = false;
 
-bool valKey[2];
-bool valKey_old[2];
-int pinKey[2];
+
 
 void setup()
 {

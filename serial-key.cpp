@@ -2,6 +2,9 @@
 #include "serial-key.hpp"
 #include "serial-display.hpp"
 
+bool valKey[2];
+bool valKey_old[2];
+int pinKey[2];
 
 #define KEYTRUELEVEL false
 
