@@ -3,8 +3,9 @@
 #include "temp-sensor.hpp"
 #include "Wire.h"
 #include "OneWire.h"
+#include "low-noise-heater-defines.hpp"
 
-#define DS18B20_PIN 2
+
 
 OneWire ds(DS18B20_PIN);
 

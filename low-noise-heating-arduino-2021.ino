@@ -29,67 +29,19 @@ char operationMode = 'A';
 void setup()
 {
   // setup OLED display
-  displaySetup();
+  displayInit();
 
-  // initialize serial: baud rate fix to 115200, B&R PLC works with USB support and FRM- Library, other baud rates are not supported.
+  // initialize serial: baud rate fix to 115200
 
   Serial.begin(115200);
   Serial.println("################################################################");
   Serial.println(" LOW NOISE HEATER (115200 Baud )");
   Serial.println("################################################################");
-  Serial.print(BUILD_DATE_TIME);
-  Serial.print(" ../ ");
-  Serial.println(__TIME__);
-
-  //Default settings IO mapping
-  pinOutputs[0] = LED_BUILTIN;
-  pinOutputs[1] = 5;
-  pinOutputs[2] = 6;
-  pinOutputs[3] = 7;
-  pinKey[0] = 11; //D11;
-  pinKey[1] = 12; //D12;
+  Serial.println(BUILD_DATE_TIME);
+  serialPlusOled(MY_BOARD_TYPE);
 
   // SCL to arduino pin A5
   // SDA to arduino pin A4
-
-#if defined(ARDUINO_AVR_UNO)
-  // Uno pin assignments
-  //serialPlusOled("ARDUINO_AVR_UNO");
-  #error Unsupported board selection. Stop compilation.
-
-#elif defined(ARDUINO_AVR_NANO)
-  // NANO
-  //serialPlusOled("ARDUINO_AVR_NANO");
-  #error Unsupported board selection. Stop compilation.
-
-
-
-#elif defined(ARDUINO_ESP8266_NODEMCU)
-  // ESP8266_NODEMCU
-  //serialPlusOled("ESP8266_NODEMCU");
-  #error Unsupported board selection. Stop compilation.
-
-
-#elif defined(ARDUINO_ESP8266_ESP13)
-  // ESP8266_ESP13 not tested
-  //serialPlusOled("ARDUINO_ESP8266_ESP13");
-  #error Unsupported board selection. Stop compilation.
-
-#elif defined(ARDUINO_AVR_PRO)
-  // ARDUINO_PRO
-  serialPlusOled("ARDUINO_AVR_PRO");
-
-  pinOutputs[0] = LED_BUILTIN;
-  pinOutputs[1] = 10;
-  pinOutputs[2] = 11;
-  pinOutputs[3] = 12;
-  pinKey[0] = 8; //D11;
-  pinKey[1] = 9; //D12;
-
-
-#else
-#error Unsupported board selection. Stop compilation.
-#endif
 
   // initialize led's
   ledInit();
@@ -105,7 +57,6 @@ void setup()
   Serial.println("###############################################################");
 
   display.clear();
-  
 }
 
 void loop()
@@ -116,18 +67,17 @@ void loop()
   if (tempSensorLoop())
   {
 
-    if (operationMode == OM_TEMPMESSUREMENT) 
+    if (operationMode == OM_TEMPMESSUREMENT)
     {
       serialOutTemperatureCsv();
-    }else {
+    }
+    else
+    {
       serialOutTemperatureDev();
     }
-  
 
     displayShowTemperature();
   }
-
-
 
   // if there's any serial available, read it:
   while (Serial.available() > 0)

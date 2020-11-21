@@ -8,7 +8,11 @@ SSD1306AsciiWire display;
 // SCL to arduino pin A5 
 // SDA to arduino pin A4
 
-void displaySetup(void) {
+// 0X3C+SA0 - 0x3C or 0x3D
+#define I2C_ADDRESS 0x3C
+
+
+void displayInit(void) {
   Wire.begin();
   Wire.setClock(400000L);
   display.begin(&Adafruit128x64, I2C_ADDRESS);
@@ -25,9 +29,7 @@ void displaySetup(void) {
 
   
   display.print("Build: ");
-  display.println(__DATE__);
-  display.print("     / ");
-  display.println(__TIME__);
+  display.println(BUILD_DATE_TIME);
   display.setFont(System5x7);
 }
 

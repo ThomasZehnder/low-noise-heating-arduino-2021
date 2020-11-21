@@ -1,4 +1,5 @@
 #include "Arduino.h"
+#include "low-noise-heater-defines.hpp"
 #include "serial-led.hpp"
 #include "serial-display.hpp"
 
@@ -7,6 +8,11 @@ char selectedPinOutput = 0;
 
 void ledInit(void)
 {
+  pinOutputs[0] = PIN_OUTPUT_0;
+  pinOutputs[1] = PIN_OUTPUT_1;
+  pinOutputs[2] = PIN_OUTPUT_2;
+  pinOutputs[3] = PIN_OUTPUT_3;
+
   int i;
   // initialize digital pin LED_BUILTIN as an output.
   for (i = 0; i < 4; i++)
@@ -16,14 +22,14 @@ void ledInit(void)
 
     // initial demo flashing
     ledPulse();
-    selectedPinOutput = (1+i)%4;
+    selectedPinOutput = (1 + i) % 4;
   }
 }
 
 void ledPulse(void)
 {
   digitalWrite(pinOutputs[selectedPinOutput], HIGH); // turn the LED on (HIGH is the voltage level)
-  delay(100);                                // wait
+  delay(100);                                        // wait
   digitalWrite(pinOutputs[selectedPinOutput], LOW);  // turn the LED on (HIGH is the voltage level)
   delay(100);
 }

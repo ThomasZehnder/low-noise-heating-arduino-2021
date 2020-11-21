@@ -1,4 +1,5 @@
 #include "Arduino.h"
+#include "low-noise-heater-defines.hpp"
 #include "serial-key.hpp"
 #include "serial-display.hpp"
 
@@ -10,6 +11,9 @@ int pinKey[2];
 
 void keyInit(void)
 {
+  pinKey[0] = PIN_KEY_0; 
+  pinKey[1] = PIN_KEY_1; 
+
   int i;
   for (i = 0; i < 2; i++)
   {
