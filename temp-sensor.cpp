@@ -137,6 +137,8 @@ bool tempSensorLoop(void)
   return false;
 }
 
+
+
 void serialOutTemperatureDev(void)
 {
   counter++;
@@ -160,17 +162,17 @@ void serialOutTemperatureCsv(void)
   counter++;
   Serial.print(counter);
 
-  Serial.print(",");
+  Serial.print(";");
 
   Serial.print(millis()/1000.0);
 
   // read all the results
   for (byte i = 0; i < m; i++)
   {
-    Serial.print(",");
+    Serial.print(";");
     show_id(i);
 
-    Serial.print(",");
+    Serial.print(";");
     Serial.print(temp[i]);
   }
   Serial.println();

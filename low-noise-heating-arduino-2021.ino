@@ -22,11 +22,9 @@
 
 char c = 0;
 
-
-
 bool serialToOledOn = false;
 
-
+char operationMode = 'A';
 
 void setup()
 {
@@ -118,15 +116,18 @@ void loop()
   if (tempSensorLoop())
   {
 
-    serialOutTemperatureCsv();
+    if (operationMode == OM_TEMPMESSUREMENT) 
+    {
+      serialOutTemperatureCsv();
+    }else {
+      serialOutTemperatureDev();
+    }
+  
 
     displayShowTemperature();
   }
 
 
-
-  // share the wait
-  delay (50) ;
 
   // if there's any serial available, read it:
   while (Serial.available() > 0)
