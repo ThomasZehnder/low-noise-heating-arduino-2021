@@ -17,7 +17,7 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": false,
                 "path": [
-                    "${workspaceRoot}",
+                    "${workspaceRoot}\\**",
                     "C:\\Users\\Thomas\\Documents\\Arduino\\libraries",
                     "C:\\Arduino\\libraries\\**",
                     "C:\\Users\\Thomas\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",

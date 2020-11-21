@@ -19,4 +19,6 @@ void displayShowCommand(char  c);
 
 bool displaySetting(char  c);
 
+void displayShowTemperature(void);
+
 #endif //serial_display_h

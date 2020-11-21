@@ -1,6 +1,6 @@
 
-extern char pinArray[4];
-extern char selectetPin;
+extern char pinOutputs[4];
+extern char selectedPinOutput;
 
 
 void ledInit(void);

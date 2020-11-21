@@ -1,5 +1,7 @@
 #include "Arduino.h"
+#include "low-noise-heater-defines.hpp"
 #include "serial-display.hpp"
+#include "temp-sensor.hpp"
 
 SSD1306AsciiWire display;
 
@@ -19,7 +21,7 @@ void displaySetup(void) {
 
 
   display.setFont(System5x7);
-  display.println("Heater V1.00");
+  display.println(String("Heater V")+VERSION);
 
   
   display.print("Build: ");
@@ -76,4 +78,34 @@ bool displaySetting(char  c)
     return true;
   }
   return false;
+}
+
+int x = 120;
+
+void displayShowTemperature(void)
+{
+      x++;
+     // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
+    display.setCursor(64, 0);
+    display.print(x);
+
+    
+    display.setFont(lcdnums12x16); // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
+    display.setCursor(0, 2);
+    display.print(getTemp(0));
+    display.setCursor(72, 2);
+    display.setFont(lcd5x7);
+    display.print("o");
+    display.setFont(fixed_bold10x15);
+    display.print("C");
+    
+    display.setFont(fixed_bold10x15); // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
+    display.setCursor(0, 4);
+    display.print(getTemp(1));
+    display.setFont(Callibri11);
+    display.setCursor(72, 4);
+    display.setFont(lcd5x7);
+    display.print("o");
+    display.setFont(fixed_bold10x15);
+    display.print("C");
 }

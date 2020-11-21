@@ -8,20 +8,20 @@ void ledInit(void)
   // initialize digital pin LED_BUILTIN as an output.
   for (i = 0; i < 4; i++)
   {
-    pinMode(pinArray[i], OUTPUT);
-    digitalWrite(pinArray[i], LOW); // turn the LED off by making the voltage LOW
+    pinMode(pinOutputs[i], OUTPUT);
+    digitalWrite(pinOutputs[i], LOW); // turn the LED off by making the voltage LOW
 
     // initial demo flashing
     ledPulse();
-    selectetPin = (1+i)%4;
+    selectedPinOutput = (1+i)%4;
   }
 }
 
 void ledPulse(void)
 {
-  digitalWrite(pinArray[selectetPin], HIGH); // turn the LED on (HIGH is the voltage level)
+  digitalWrite(pinOutputs[selectedPinOutput], HIGH); // turn the LED on (HIGH is the voltage level)
   delay(100);                                // wait
-  digitalWrite(pinArray[selectetPin], LOW);  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(pinOutputs[selectedPinOutput], LOW);  // turn the LED on (HIGH is the voltage level)
   delay(100);
 }
 void ledFlash(void)
@@ -42,12 +42,12 @@ void ledCommand(char c)
   }
   else if (c == 'o')
   {
-    digitalWrite(pinArray[selectetPin], HIGH); // turn the LED on (HIGH is the voltage level)
+    digitalWrite(pinOutputs[selectedPinOutput], HIGH); // turn the LED on (HIGH is the voltage level)
     serialPlusOled("o = off");
   }
   else if (c == 'x')
   {
-    digitalWrite(pinArray[selectetPin], LOW); // turn the LED on (HIGH is the voltage level)
+    digitalWrite(pinOutputs[selectedPinOutput], LOW); // turn the LED on (HIGH is the voltage level)
     serialPlusOled("x = on");
   }
   else if (c == 'p')
@@ -63,22 +63,22 @@ void ledCommand(char c)
   else if (c == '0')
   {
     serialPlusOled("select led 0");
-    selectetPin = 0;
+    selectedPinOutput = 0;
   }
   else if (c == '1')
   {
     serialPlusOled("select led 1");
-    selectetPin = 1;
+    selectedPinOutput = 1;
   }
   else if (c == '2')
   {
     serialPlusOled("select led 2");
-    selectetPin = 2;
+    selectedPinOutput = 2;
   }
   else if (c == '3')
   {
     serialPlusOled("select led 3");
-    selectetPin = 3;
+    selectedPinOutput = 3;
   }
   else if (c == '\r')
   {

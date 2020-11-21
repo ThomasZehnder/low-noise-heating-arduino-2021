@@ -21,8 +21,8 @@
 
 char c = 0;
 
-char pinArray[4];
-char selectetPin = 0;
+char pinOutputs[4];
+char selectedPinOutput = 0;
 
 bool serialToOledOn = false;
 
@@ -46,10 +46,10 @@ void setup()
   Serial.println(__TIME__);
 
   //Default settings IO mapping
-  pinArray[0] = LED_BUILTIN;
-  pinArray[1] = 5;
-  pinArray[2] = 6;
-  pinArray[3] = 7;
+  pinOutputs[0] = LED_BUILTIN;
+  pinOutputs[1] = 5;
+  pinOutputs[2] = 6;
+  pinOutputs[3] = 7;
   pinKey[0] = 11; //D11;
   pinKey[1] = 12; //D12;
 
@@ -58,35 +58,35 @@ void setup()
 
 #if defined(ARDUINO_AVR_UNO)
   // Uno pin assignments
-  serialPlusOled("ARDUINO_AVR_UNO");
+  //serialPlusOled("ARDUINO_AVR_UNO");
   #error Unsupported board selection. Stop compilation.
 
 #elif defined(ARDUINO_AVR_NANO)
   // NANO
-  serialPlusOled("ARDUINO_AVR_NANO");
+  //serialPlusOled("ARDUINO_AVR_NANO");
   #error Unsupported board selection. Stop compilation.
 
 
 
 #elif defined(ARDUINO_ESP8266_NODEMCU)
   // ESP8266_NODEMCU
-  serialPlusOled("ESP8266_NODEMCU");
+  //serialPlusOled("ESP8266_NODEMCU");
   #error Unsupported board selection. Stop compilation.
 
 
 #elif defined(ARDUINO_ESP8266_ESP13)
   // ESP8266_ESP13 not tested
-  serialPlusOled("ARDUINO_ESP8266_ESP13");
+  //serialPlusOled("ARDUINO_ESP8266_ESP13");
   #error Unsupported board selection. Stop compilation.
 
 #elif defined(ARDUINO_AVR_PRO)
   // ARDUINO_PRO
   serialPlusOled("ARDUINO_AVR_PRO");
 
-  pinArray[0] = LED_BUILTIN;
-  pinArray[1] = 10;
-  pinArray[2] = 11;
-  pinArray[3] = 12;
+  pinOutputs[0] = LED_BUILTIN;
+  pinOutputs[1] = 10;
+  pinOutputs[2] = 11;
+  pinOutputs[3] = 12;
   pinKey[0] = 8; //D11;
   pinKey[1] = 9; //D12;
 
@@ -111,7 +111,6 @@ void setup()
   display.clear();
   
 }
-int x = 120;
 
 void loop()
 {
@@ -123,30 +122,7 @@ void loop()
 
     serialOutTemperatureCsv();
 
-    x++;
-     // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
-    display.setCursor(64, 0);
-    display.print(x);
-
-    
-    display.setFont(lcdnums12x16); // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
-    display.setCursor(0, 2);
-    display.print(getTemp(0));
-    display.setCursor(72, 2);
-    display.setFont(lcd5x7);
-    display.print("o");
-    display.setFont(fixed_bold10x15);
-    display.print("C");
-    
-    display.setFont(fixed_bold10x15); // https://github.com/greiman/SSD1306Ascii/blob/master/doc/MainPage/SSD1306mainpage.h
-    display.setCursor(0, 4);
-    display.print(getTemp(1));
-    display.setFont(Callibri11);
-    display.setCursor(72, 4);
-    display.setFont(lcd5x7);
-    display.print("o");
-    display.setFont(fixed_bold10x15);
-    display.print("C");
+    displayShowTemperature();
   }
 
 
