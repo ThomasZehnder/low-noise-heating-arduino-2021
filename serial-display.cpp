@@ -20,13 +20,15 @@ void displayInit(void)
 
   display.setFont(fixed_bold10x15);
   display.clear();
-  display.println("LOW Noise");
+  display.println("LOW NOISE");
 
   display.setFont(System5x7);
   display.println(String("Heater V") + VERSION);
+  display.println(MY_BOARD_TYPE);
 
   display.print("Build: ");
-  display.println(BUILD_DATE_TIME);
+  display.println(BUILD_DATE);
+  display.println(BUILD_TIME);
 
 }
 

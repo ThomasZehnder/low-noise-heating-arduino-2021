@@ -14,7 +14,7 @@
 #define PIN_OUTPUT_2 11
 #define PIN_OUTPUT_3 12
 #define PIN_KEY_0 8
-#define PIN_KEY_1 9 
+#define PIN_KEY_1 9
 
 //Board Type, only support Arduino Pro Mini
 #define MY_BOARD_TYPE "ARDUINO_AVR_PRO"
@@ -28,5 +28,7 @@
 
 //BUILD DATE
 #define BUILD_DATE_TIME __DATE__ "/" __TIME__
+#define BUILD_TIME __TIME__
+#define BUILD_DATE __DATE__
 
 #endif //low_noise_heater_defines_h
