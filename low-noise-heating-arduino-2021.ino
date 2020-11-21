@@ -28,17 +28,11 @@ char operationMode = 'A';
 
 void setup()
 {
-  // setup OLED display
+  // setup OLED display 
   displayInit();
 
   // initialize serial: baud rate fix to 115200
-
-  Serial.begin(115200);
-  Serial.println("################################################################");
-  Serial.println(" LOW NOISE HEATER (115200 Baud )");
-  Serial.println("################################################################");
-  Serial.println(BUILD_DATE_TIME);
-  serialPlusOled(MY_BOARD_TYPE);
+  serialInit(115200);
 
   // SCL to arduino pin A5
   // SDA to arduino pin A4
@@ -49,6 +43,7 @@ void setup()
   // initialize keys
   keyInit();
 
+  // initialize temeratue sensors
   tempSensorSetup();
 
   //INTRO Help (also accessable with \h)

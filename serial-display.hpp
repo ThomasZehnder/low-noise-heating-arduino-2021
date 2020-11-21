@@ -8,6 +8,7 @@
 extern SSD1306AsciiWire display;
 
 void displayInit(void);
+void serialInit(long baudrate);
 
 void serialPlusOled(char *s);
 void serialPlusOledDelayed(char *s);
